@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class numbergame {
     public static void main(String[] args) {
-        // Hey there! Let's get our tools ready. We need a way to get
-        // input from the user (keyboard) and a way to pick a random number.
+        
+        // input from the user  and a way to pick a random number.
         Scanner keyboard = new Scanner(System.in);
         Random numberPicker = new Random();
 
@@ -14,12 +14,12 @@ public class numbergame {
         System.out.println("Hello! Let's play a number guessing game. It's a classic!");
 
         while (playingTheGame) {
-            // First, let's set up the game for this round.
+            
             int minimumNumber = 1;
             int maximumNumber = 100;
             int theSecretNumber = numberPicker.nextInt(maximumNumber - minimumNumber + 1) + minimumNumber;
             int guessesTaken = 0;
-            int maxGuesses = 8; // Making it a bit tough, but fair!
+            int maxGuesses = 8; 
             boolean didTheyWin = false;
 
             System.out.println(" I've just picked a number between " + minimumNumber + " and " + maximumNumber + ".");
@@ -35,21 +35,20 @@ public class numbergame {
                     System.out.println("Whoa, you got it! The number was " + theSecretNumber + " all along.");
                     System.out.println("You found it in only " + guessesTaken + " tries. Nice work!");
                     didTheyWin = true;
-                    break; // No need to guess anymore, they won!
+                    break; 
                 } else if (usersGuess < theSecretNumber) {
                     System.out.println("Nope, that's too low. Try guessing a higher number.");
-                } else { // It must be higher
+                } else { 
                     System.out.println("Hmm, that's too high. My number is smaller than that.");
                 }
 
-                // Giving them a heads-up on how many guesses are left.
-                // The logical check is needed here to prevent the message from appearing after the last guess.
+                
                 if (guessesTaken < maxGuesses) { 
                     System.out.println("You've used " + guessesTaken + " out of " + maxGuesses + " guesses. Keep going!");
                 }
-            } // This curly brace was misplaced, it should be here.
+            } 
 
-            // If the loop finished but they didn't win, they must have run out of guesses.
+           
             if (!didTheyWin) {
                 System.out.println("you're out of guesses. The number was " + theSecretNumber + ".");
             }
@@ -61,6 +60,7 @@ public class numbergame {
         }
 
         System.out.println("\nThanks for playing! Come back any time.");
-        keyboard.close(); // Important to close the scanner when we're done.
+        keyboard.close(); 
     }
+
 }
