@@ -11,7 +11,7 @@ public class numbergame {
         // This will keep track of if the user wants to keep playing.
         boolean playingTheGame = true;
 
-        System.out.println("Hello! Let's play a number guessing game. It's a classic!");
+        System.out.println("Hello! Let's play a number guessing game.");
 
         while (playingTheGame) {
             
@@ -64,3 +64,4 @@ public class numbergame {
     }
 
 }
+
